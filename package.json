@@ -15,7 +15,8 @@
 		"jsonwebtoken": "*",
 		"body-parser": "*",
 		"passport": "*",
-		"passport-jwt": "*"
+		"passport-jwt": "*",
+		"nodemon": "*"
 	},
 	"author": "Muhammad Awais Qureshi",
 	"license": "ISC"
