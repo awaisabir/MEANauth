@@ -6,6 +6,10 @@ Tasks completed:
 	- Created the Schema & connection to the database.
 	- Created a registration system.
 
+Newly learned:
+
+	- POSTMAN to test endpoints!
+
 To run the app type the following commands:
 
 	npm install
