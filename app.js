@@ -7,13 +7,16 @@ const passport = require("passport");
 const mongoose = require("mongoose");
 const config = require("./config/database");
 
+// connect
 mongoose.connect(config.database);
 
+// error handle
 mongoose.connection.on('error', () => {
 
 	console.log("error " + config.database);
 })
 
+// connection handle
 mongoose.connection.on('connected', () => {
 
 	console.log("Connected to db " + config.database);
@@ -22,6 +25,7 @@ mongoose.connection.on('connected', () => {
 // Initializing express
 const app = express();
 
+// require the user routes
 const users = require('./routes/users');
 
 // Middleware
@@ -29,7 +33,13 @@ app.use(cors());
 app.use(bodyparser.json());
 app.use('/users', users);
 // static folder
+
 app.use(express.static(path.join(__dirname, 'public')));
+
+// passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+require('./config/passport')(passport);
 
 // Port
 const PORT = 3000;
@@ -38,11 +48,6 @@ const PORT = 3000;
 app.get('/', (req, res) => {
 
 	res.send('Invalid Route');
-});
-
-app.get('*', (req, res) => {
-
-	res.send('404');
 });
 
 
