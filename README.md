@@ -10,9 +10,9 @@ Tasks completed:
 	- Made a displayable Home/Landing Page.
 	- Enabled flash messages through angular2-flash-messages;
 	- Created a service to validate the email format (through RegExp).
-	-	Auth/AuthGuard services
+	- Auth/AuthGuard services
 	- Redirect
-	-	Connecting front and back end through the public folder
+	- Connecting front and back end through the public folder
 
 To run the app type the following commands:
 
