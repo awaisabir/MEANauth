@@ -50,6 +50,10 @@ app.get('/', (req, res) => {
 	res.send('Invalid Route');
 });
 
+app.get('*', (req, res) => {
+
+	res.sendFile(path.join(__dirname, 'public/index.html'));
+})
 
 // Startup server
 app.listen(PORT, () => {
