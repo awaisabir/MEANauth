@@ -1,4 +1,4 @@
-#MEAN authentication app
+# MEAN authentication app
 
 Tasks completed:
 
@@ -10,19 +10,9 @@ Tasks completed:
 	- Made a displayable Home/Landing Page.
 	- Enabled flash messages through angular2-flash-messages;
 	- Created a service to validate the email format (through RegExp).
-
-To do:
-
-	- Edit the components properly
-	- create the forms for the Login Page
-	- Connect the UI/Front-End to the Back end
-
-Newly learned:
-
-	- POSTMAN to test endpoints!
-	- Angular2 Routing!
-	- Angular2 services!
-	- Angular2 Flash messages!
+	-	Auth/AuthGuard services
+	- Redirect
+	-	Connecting front and back end through the public folder
 
 To run the app type the following commands:
 
