@@ -36,7 +36,7 @@ router.post('/register', (req, res, next) => {
 					res.json({success: false, message: "Failed to register user"});
 				else {
 					// send a success
-					res.json({success: true, message: "User registered"});	
+					res.json({success: true, message: "User registered"});
 				}
 			});
 
@@ -49,7 +49,7 @@ router.post('/register', (req, res, next) => {
 	// 		res.json({success: false, message: "Failed to register user"});
 	// 	else {
 
-	// 		res.json({success: true, message: "User registered"});	
+	// 		res.json({success: true, message: "User registered"});
 	// 	}
 	// });
 
@@ -72,7 +72,7 @@ router.post('/authenticate', (req, res, next) => {
 		if(!user) {
 
 			// send JSON with message
-			res.json({success: false, message: "User not found"});
+			return res.json({success: false, message: "User not found"});
 		}
 
 		// if there is a user, then compare the passwords sent over
@@ -86,7 +86,7 @@ router.post('/authenticate', (req, res, next) => {
 
 				// assign a token which expires in 3 minutes
 				const token = jwt.sign(user, config.secret, {
-					expiresIn: 180
+					expiresIn: 500000
 				});
 
 				// send a json of the JWT TOKEN & user information
@@ -103,7 +103,7 @@ router.post('/authenticate', (req, res, next) => {
 			} else {
 
 				// Wrong password
-				res.json({success: false, message: "Oops! Wrong password"});
+				return res.json({success: false, message: "Oops! Wrong password"});
 			}
 		});
 	});
